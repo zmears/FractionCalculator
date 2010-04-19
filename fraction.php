@@ -40,9 +40,9 @@ class fraction {
 		if (!is_numeric($denominator)) {
 			throw new Exception("The denominator must be numeric. '$denominator' is not a valid value.");
 		}
-		//Set the values if they pass the basic validation
-		$this->numerator   = $numerator;
-		$this->denominator = $denominator;
+		//Set the absolute values if they pass the basic validation
+		$this->numerator   = abs($numerator);
+		$this->denominator = abs($denominator);
 	}
 	
 	/**

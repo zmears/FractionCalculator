@@ -206,9 +206,8 @@ class fractionCalculator {
 		$leftFraction = array_shift($fractions);
 		$rightFraction = array_shift($fractions);
 		
-		
+		//Need to find the least common multiple of the denominators
 		$lcm = $this->getLcm($leftFraction->denominator, $rightFraction->denominator);
-		
 		foreach ($fractions as $fraction) {
 			$lcm = $this->getLcm($lcm, $fraction->denominator);
 		}
@@ -240,10 +239,13 @@ class fractionCalculator {
 	 */
 	protected function _displayResults() {
 		if (null !== $this->result) {
+            //Determine if the fraction is negative and add the prefix to the begginging.
+		    $prefix = (($this->result->numerator < 0) || ($this->result->denominator < 0)) ? "-" : null;
 			echo '<h3 id="result">' 
-			     . $this->result->numerator
+			     . $prefix
+			     . abs($this->result->numerator)
 			     . '/'
-			     . $this->result->denominator
+			     . abs($this->result->denominator)
 			     . '</h3>';
 		}
 	}

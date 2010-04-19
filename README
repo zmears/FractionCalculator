@@ -1,0 +1,14 @@
+Simple Fraction Calculator
+==========================
+
+fractionCalculator.php: Does the dirty work of adding, subtracting, multiplying and diving fractions.
+fraction.php:           Holds the fraction information and also does stuff like reducing the fraction.
+index.php:              Form
+calculateScript.php:    Validates and formats post data.
+
+ToDo:
+    Handle Improper Fractions
+    Update form to handle more than two fractions
+    Improve result displaying
+
+Author: Zach Mears
